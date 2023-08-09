@@ -1,0 +1,52 @@
+@layer atoms {
+	.btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5em;
+
+		font-size: 1rem;
+		font-weight: 700;
+
+		height: 2.5em;
+		max-width: 100%;
+		padding: 0 1em;
+		border-radius: 0.25em;
+		transition: transform 0.1s ease-out;
+
+		&:hover {
+			transform: scale(1.01);
+		}
+		&:active {
+			transform: scale(0.98);
+		}
+
+		&-sm {
+			font-size: 0.85rem;
+		}
+		&-lg {
+			font-size: 1.5rem;
+		}
+	}
+
+	.btn-filled {
+		&:hover {
+			background-image: linear-gradient(hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0.1));
+		}
+		&:active {
+			background-image: linear-gradient(hsla(0, 0%, 0%, 0.2), hsla(0, 0%, 0%, 0.2));
+		}
+	}
+
+	.btn {
+		&-primary {
+			background-color: var(--color-primary);
+			color: white;
+		}
+
+		&-warning {
+			background-color: var(--color-warning);
+			color: var(--color-surface-900);
+		}
+	}
+}

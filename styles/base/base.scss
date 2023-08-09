@@ -1,0 +1,67 @@
+@use "../variables/breakpoints.scss";
+@font-face {
+	font-family: Roboto;
+	src: local("Roboto"), url("/assets/fonts/Roboto-Light.ttf") format("TrueType");
+	font-weight: 200;
+	font-style: normal;
+}
+@font-face {
+	font-family: Roboto;
+	src: local("Roboto"), url("/assets/fonts/Roboto-Regular.ttf") format("TrueType");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Roboto;
+	src: local("Roboto"), url("/assets/fonts/Roboto-Medium.ttf") format("TrueType");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: Roboto;
+	src: local("Roboto"), url("/assets/fonts/Roboto-Bold.ttf") format("TrueType");
+	font-weight: 700;
+	font-style: normal;
+}
+$base-font-size: 16px;
+$base-line-height: 1.25;
+$font-family: "Roboto, Arial, Helvetica, sans-serif";
+
+@layer base {
+	:root {
+		--color-primary: rgb(33, 113, 205);
+
+		--color-error: rgb(183, 28, 28);
+		--color-warning: rgb(255, 177, 59);
+		--color-success: rgb(76, 175, 80);
+
+		--color-surface-100: rgb(252, 252, 252);
+		--color-surface-200: rgb(235, 235, 235);
+		--color-surface-300: rgb(210, 210, 210);
+		--color-surface-400: rgb(186, 186, 186);
+		--color-surface-500: rgb(124, 124, 124);
+		--color-surface-600: rgb(98, 98, 98);
+		--color-surface-700: rgb(72, 72, 72);
+		--color-surface-800: rgb(44, 44, 44);
+		--color-surface-900: rgb(19, 18, 18);
+
+		background-color: var(--color-surface-100);
+		color: var(--color-surface-800);
+		font: normal normal normal #{$base-font-size} / #{$base-line-height} #{$font-family};
+	}
+
+	main {
+		padding: 1rem;
+
+		& > * ~ * {
+			margin-top: 1.5rem;
+		}
+
+		@media screen and (min-width: breakpoints.$phone) {
+			padding: 2rem;
+		}
+		@media screen and (min-width: breakpoints.$tablet) {
+			padding: 2rem clamp(0px, calc(10vw - (6rem - 7vw)), 20%);
+		}
+	}
+}

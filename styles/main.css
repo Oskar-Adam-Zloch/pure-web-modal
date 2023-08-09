@@ -1,0 +1,265 @@
+@layer resets, base, atoms, molecules, organisms, utilities;
+@layer resets {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  h6 {
+    font-size: 0.6944444444rem;
+    margin: 0;
+  }
+  h5 {
+    font-size: 0.8333333333rem;
+    margin: 0;
+  }
+  h4 {
+    font-size: 1.0416666667rem;
+    margin: 0;
+  }
+  h3 {
+    font-size: 1.3888888889rem;
+    margin: 0;
+  }
+  h2 {
+    font-size: 2.0833333333rem;
+    margin: 0;
+  }
+  h1 {
+    font-size: 4.1666666667rem;
+    margin: 0;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+@font-face {
+  font-family: Roboto;
+  src: local("Roboto"), url("/assets/fonts/Roboto-Light.ttf") format("TrueType");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: local("Roboto"), url("/assets/fonts/Roboto-Regular.ttf") format("TrueType");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: local("Roboto"), url("/assets/fonts/Roboto-Medium.ttf") format("TrueType");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: local("Roboto"), url("/assets/fonts/Roboto-Bold.ttf") format("TrueType");
+  font-weight: 700;
+  font-style: normal;
+}
+@layer base {
+  :root {
+    --color-primary: rgb(33, 113, 205);
+    --color-error: rgb(183, 28, 28);
+    --color-warning: rgb(255, 177, 59);
+    --color-success: rgb(76, 175, 80);
+    --color-surface-100: rgb(252, 252, 252);
+    --color-surface-200: rgb(235, 235, 235);
+    --color-surface-300: rgb(210, 210, 210);
+    --color-surface-400: rgb(186, 186, 186);
+    --color-surface-500: rgb(124, 124, 124);
+    --color-surface-600: rgb(98, 98, 98);
+    --color-surface-700: rgb(72, 72, 72);
+    --color-surface-800: rgb(44, 44, 44);
+    --color-surface-900: rgb(19, 18, 18);
+    background-color: var(--color-surface-100);
+    color: var(--color-surface-800);
+    font: normal normal normal 16px/1.25 Roboto, Arial, Helvetica, sans-serif;
+  }
+  main {
+    padding: 1rem;
+  }
+  main > * ~ * {
+    margin-top: 1.5rem;
+  }
+  @media screen and (min-width: 480px) {
+    main {
+      padding: 2rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    main {
+      padding: 2rem clamp(0px, 10vw - (6rem - 7vw), 20%);
+    }
+  }
+}
+@layer atoms {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 2.5em;
+    max-width: 100%;
+    padding: 0 1em;
+    border-radius: 0.25em;
+    transition: transform 0.1s ease-out;
+  }
+  .btn:hover {
+    transform: scale(1.01);
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn-sm {
+    font-size: 0.85rem;
+  }
+  .btn-lg {
+    font-size: 1.5rem;
+  }
+  .btn-filled:hover {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 100%, 0.1));
+  }
+  .btn-filled:active {
+    background-image: linear-gradient(hsla(0, 0%, 0%, 0.2), hsla(0, 0%, 0%, 0.2));
+  }
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  .btn-warning {
+    background-color: var(--color-warning);
+    color: var(--color-surface-900);
+  }
+}
+@layer molecules {
+  .site-bar {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    gap: 1rem;
+    height: 4rem;
+    padding: 0.5rem 2rem;
+    background-color: var(--color-surface-900);
+  }
+  .site-bar-logo {
+    height: 1rem;
+  }
+  .site-bar-nav {
+    max-height: 100%;
+    flex-grow: 1;
+    width: 50%;
+    overflow-x: auto;
+    color: var(--color-surface-400);
+  }
+  .site-bar-nav-list {
+    display: flex;
+    gap: 1rem;
+  }
+  .site-bar-link-active {
+    color: white;
+    text-decoration: underline;
+  }
+}
+@layer molecules {
+  .modal {
+    background-color: var(--color-surface-100);
+    margin: auto;
+    min-width: 16rem;
+    width: 100%;
+    max-width: calc(60vw + 5rem);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  .modal-backdrop {
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(16, 16, 16, 0.5);
+    padding: 1rem;
+    width: 100vw;
+    height: 100vh;
+  }
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@layer molecules {
+  .news-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 1.5rem;
+  }
+  @media screen and (min-width: 480px) {
+    .news-list {
+      grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+    }
+  }
+  .news-card {
+    display: block;
+    background-color: var(--color-surface-100);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease-out;
+  }
+  .news-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.18);
+  }
+  .news-card-banner {
+    position: relative;
+    padding-bottom: 48%;
+    width: 100%;
+  }
+  .news-card-banner img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .news-card-content {
+    padding: 1rem;
+  }
+}
+@layer utilities {
+  .font-regular {
+    font-weight: 400;
+  }
+  .text-no-wrap {
+    white-space: nowrap;
+  }
+  .text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@layer utilities {
+  .hidden {
+    display: none;
+  }
+}
+.w-full {
+  width: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Beru Modal Test</title>
+		<link rel="stylesheet" href="/styles/main.css" />
+	</head>
+	<body>
+		<div class="modal-backdrop hidden">
+			<div class="modal">
+				<div class="modal-actions">
+					<button id="modal-close-btn" class="btn btn-sm btn-filled btn-primary">Close window</button>
+				</div>
+				<article class="modal-content">
+					<header><h2>Breaking News</h2></header>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis saepe vel voluptatum,
+						quidem porro eum sed ipsam nihil quas! Quam, tempora? Aperiam quae quam amet voluptates vitae
+						modi itaque?
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, magnam? Sed exercitationem
+						nihil libero, perspiciatis culpa architecto quasi ipsa enim beatae itaque voluptatibus commodi
+						necessitatibus molestias veritatis molestiae laboriosam quis doloribus minus quas rem velit,
+						consequuntur nesciunt temporibus voluptatum! Odit debitis perspiciatis praesentium suscipit sunt
+						provident sint omnis iusto magnam.
+					</p>
+				</article>
+			</div>
+		</div>
+		<header class="site-bar">
+			<img class="site-bar-logo" src="./assets/logo.svg" alt="Welcome to Logo" />
+			<nav class="site-bar-nav">
+				<ul class="site-bar-nav-list">
+					<li><a class="btn btn-filled" href="/">Home</a></li>
+					<li><a class="btn btn-filled site-bar-link-active" href="/news">News</a></li>
+					<li><a class="btn btn-filled" href="/events">Events</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<header>
+				<h1>News</h1>
+			</header>
+			<button id="breaking-news-btn" class="btn btn-filled btn-warning w-full">
+				<b class="text-no-wrap">Breaking News:</b
+				><u class="font-regular text-truncate"
+					>Once upon a time in a big city lived a beautiful girl named Beru. She also was a programmer, and
+					she loved coding.</u
+				>
+			</button>
+			<ul class="news-list">
+				<li>
+					<a class="news-card" href="/news/hello-code-1">
+						<div class="news-card-banner">
+							<img src="./assets/test-image.jpg" alt="computer screen filled with programming code" />
+						</div>
+						<div class="news-card-content">
+							<h2>Hello Code</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem velit iusto
+								nemo, animi quas, nisi maxime eius aliquam delectus dicta dolorem, adipisci ab eos
+								tenetur mollitia aut? Perspiciatis, temporibus aliquid.
+							</p>
+						</div>
+					</a>
+				</li>
+
+				<li>
+					<a class="news-card" href="/news/hello-code-2">
+						<div class="news-card-banner">
+							<img src="./assets/test-image.jpg" alt="computer screen filled with programming code" />
+						</div>
+						<div class="news-card-content">
+							<h2>Hello Code 2</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem velit iusto
+								nemo, animi quas, nisi maxime eius aliquam delectus dicta dolorem, adipisci ab eos
+								tenetur mollitia aut? Perspiciatis, temporibus aliquid.
+							</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</main>
+	</body>
+</html>
+
+<script defer>
+	window.addEventListener("load", () => {
+		let modal = document.querySelector(".modal-backdrop");
+
+		let breakingNewsBtn = document.querySelector("#breaking-news-btn");
+		breakingNewsBtn.addEventListener("click", () => {
+			modal.classList.remove("hidden");
+		});
+
+		let modalCloseBtn = document.querySelector("#modal-close-btn");
+		modalCloseBtn.addEventListener("click", () => {
+			modal.classList.add("hidden");
+		});
+	});
+</script>

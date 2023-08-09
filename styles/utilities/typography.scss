@@ -1,0 +1,13 @@
+@layer utilities {
+	.font-regular {
+		font-weight: 400;
+	}
+	.text-no-wrap {
+		white-space: nowrap;
+	}
+	.text-truncate {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

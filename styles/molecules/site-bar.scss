@@ -1,0 +1,30 @@
+@layer molecules {
+	.site-bar {
+		display: flex;
+		align-items: center;
+		width: 100vw;
+		gap: 1rem;
+		height: 4rem;
+		padding: 0.5rem 2rem;
+		background-color: var(--color-surface-900);
+
+		&-logo {
+			height: 1rem;
+		}
+		&-nav {
+			max-height: 100%;
+			flex-grow: 1;
+			width: 50%;
+			overflow-x: auto;
+			color: var(--color-surface-400);
+		}
+		&-nav-list {
+			display: flex;
+			gap: 1rem;
+		}
+		&-link-active {
+			color: white;
+			text-decoration: underline;
+		}
+	}
+}

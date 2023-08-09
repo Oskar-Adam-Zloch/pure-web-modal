@@ -1,0 +1,27 @@
+@layer molecules {
+	.modal {
+		&-backdrop {
+			display: flex;
+			position: fixed;
+			z-index: 10;
+
+			background-color: rgb(16 16 16 /0.5);
+			padding: 1rem;
+			width: 100vw;
+			height: 100vh;
+		}
+
+		background-color: var(--color-surface-100);
+		margin: auto;
+		min-width: 16rem;
+		width: 100%;
+		max-width: calc(60vw + 5rem);
+		padding: 1.5rem;
+		border-radius: 0.5rem;
+
+		&-actions {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+}
